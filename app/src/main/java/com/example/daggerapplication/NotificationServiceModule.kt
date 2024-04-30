@@ -7,6 +7,7 @@ import javax.inject.Named
 @Module
 class NotificationServiceModule()  {
 
+    @ActivityScope
     @MessageQualifier
     @Provides
     fun getMessageService(retryAccount: Int) : NotificationService {
