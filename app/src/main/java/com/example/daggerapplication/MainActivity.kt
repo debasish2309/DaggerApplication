@@ -17,7 +17,7 @@ class MainActivity : AppCompatActivity() {
         enableEdgeToEdge()
         setContentView(R.layout.activity_main)
 
-        val component = DaggerUserRegistrationComponent.builder().build()
+        val component = DaggerUserRegistrationComponent.factory().create(3)
         component.inject(this)
         userRegistrationService.registerUser("deb@dey.com","1111111")
         emailService.send("Deb@gmail.com","Deb@gmail.com","this is the text" )
